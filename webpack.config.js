@@ -47,7 +47,7 @@ module.exports = {
 	devtool: process.env.WEBPACK_DEVTOOL || 'eval-source-map',
 	output: {
 		publicPath: '/',
-		path: path.join(__dirname, 'public'),
+		path: path.join(__dirname, 'dist'),
 		filename: 'bundle.js'
 	},
 	resolve: {
@@ -57,7 +57,7 @@ module.exports = {
 		loaders
 	},
 	devServer: {
-		contentBase: "./public",
+		contentBase: "./dist",
 		// do not print bundle build stats
 		noInfo: true,
 		// enable HMR
@@ -74,7 +74,7 @@ module.exports = {
 		new webpack.HotModuleReplacementPlugin(),
 		new DashboardPlugin(),
 		new HtmlWebpackPlugin({
-			template: './src/template.html'
+			template: './src/index.html'
 		}),
 	]
 };
